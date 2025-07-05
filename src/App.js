@@ -1,24 +1,70 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
+import AboutSection from "./components/AboutSection";
+import PlantSection from "./components/PlantSection";
+import ContactSection from "./components/ContactSection";
+import LearnSection from "./components/LearnSection";
+import Navbar from "./components/Navbar"; // You must have this component
+import Footer from "./components/Footer"; // You must have this component
+
+function Layout({ children }) {
+  return (
+    <>
+      <Navbar />
+      <main>{children}</main>
+      <Footer />
+    </>
+  );
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Layout>
+              <Home />
+            </Layout>
+          }
+        />
+        <Route
+          path="/about"
+          element={
+            <Layout>
+              <AboutSection />
+            </Layout>
+          }
+        />
+        <Route
+          path="/plants"
+          element={
+            <Layout>
+              <PlantSection />
+            </Layout>
+          }
+        />
+        <Route
+          path="/contact"
+          element={
+            <Layout>
+              <ContactSection />
+            </Layout>
+          }
+        />
+        <Route
+          path="/learn"
+          element={
+            <Layout>
+              <LearnSection />
+            </Layout>
+          }
+        />
+      </Routes>
+    </Router>
   );
 }
 
