@@ -239,26 +239,37 @@ const AboutPage = () => {
 
       {/* Newsletter Section */}
       <section className="bg-[#d9eddc] py-12 px-4">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="text-center md:text-left">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800">Subscribe to our newsletter!</h2>
-            <p className="text-gray-600 mt-2">Be informed when new offers are available.</p>
-          </div>
-          <form onSubmit={handleSubscribe} className="flex w-full md:w-auto max-w-md">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 px-4 py-3 rounded-l-full border border-gray-300 focus:outline-none"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-            <button type="submit" className="bg-green-600 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-r-full shadow-md transition-all">
-              SUBSCRIBE
-            </button>
-          </form>
-        </div>
-      </section>
+  <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-6">
+    <div className="w-full lg:w-1/2 text-center lg:text-left">
+      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800">
+        Subscribe to our newsletter!
+      </h2>
+      <p className="text-gray-600 mt-2 text-sm sm:text-base">
+        Be informed when new offers are available.
+      </p>
+    </div>
+    <form
+      onSubmit={handleSubscribe}
+      className="w-full sm:px-10 lg:px-0 lg:w-1/2 flex flex-col sm:flex-row items-center sm:items-stretch max-w-2xl mx-auto"
+    >
+      <input
+        type="email"
+        placeholder="Enter your email"
+        className="w-full sm:w-auto flex-1 px-4 py-3 rounded-full sm:rounded-l-full sm:rounded-r-none border border-gray-300 focus:outline-none"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        required
+      />
+      <button
+        type="submit"
+        className="w-full sm:w-auto mt-3 sm:mt-0 bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-full sm:rounded-r-full sm:rounded-l-none shadow-md transition-all"
+      >
+        SUBSCRIBE
+      </button>
+    </form>
+  </div>
+</section>
+
 
       {/* Scroll to Top Button */}
       {showScrollButton && (
