@@ -86,7 +86,7 @@ const HomePage = () => {
           <h1 className="text-5xl md:text-7xl font-bold mb-4">GreenEarth</h1>
           <h2 className="text-4xl md:text-6xl font-bold mb-6">Plant Store</h2>
           <hr className=" border-2 border-white w-auto mb-4 mr-24 md:mr-0" />
-          <p className="text-lg md:text-xl font-light">
+          <p className="text-lg md:text-xl font-light pr-8">
             Take your piece of nature filled with love and care.
           </p>
         </div>
@@ -192,7 +192,7 @@ const HomePage = () => {
             <p className="text-gray-800 text-base md:text-lg mb-6 leading-relaxed">
               The whole process will be supervised and managed by our specialists to ensure the success of the project. Taking the whole responsibility, we'll make sure you are fully satisfied with what we have as a final result.
             </p>
-            <button className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg shadow-md transition-all">
+            <button onClick={() => handleNavClick("/plants")} className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg shadow-md transition-all">
               See more
             </button>
           </div>

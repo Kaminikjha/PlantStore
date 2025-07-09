@@ -1,6 +1,7 @@
+// Place this inside AboutPage.jsx or any single component file
+
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import {
   FaFacebookF,
   FaTwitter,
@@ -37,7 +38,6 @@ const AboutPage = () => {
   const [email, setEmail] = useState("");
   const isMobile = window.innerWidth <= 640;
 
-
   const stats = [
     { value: 745, label: "Happy clients" },
     { value: 864, label: "Sold plants" },
@@ -46,7 +46,6 @@ const AboutPage = () => {
   ];
   const [counts, setCounts] = useState(stats.map(() => 0));
 
-  
   const navigate = useNavigate();
   const handleNavClick = (path) => {
     navigate(path);
@@ -130,8 +129,7 @@ const AboutPage = () => {
         className="py-20 px-4 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${bgImage})` }}
       >
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 p-6 md:p-10">
-          {/* Three Cards */}
+        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 p-4 sm:p-6 md:p-10">
           {[
             {
               title: "Who we are",
@@ -155,19 +153,19 @@ const AboutPage = () => {
       </section>
 
       {/* Boutique Section */}
-      <section className="py-20 px-6 md:px-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
-          <div className="hidden sm:block w-full lg:w-1/2">
+      <section className="py-16 px-4 sm:px-6 lg:px-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+          <div className="w-full lg:w-1/2 hidden sm:block">
             <img src={activeImage} alt="Boutique" className="rounded-xl shadow-xl w-full h-auto object-cover" />
           </div>
           <div className="w-full lg:w-1/2">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our boutique stores</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our boutique stores</h2>
             <p className="text-gray-600 mb-6">Find our boutique stores in the centers of LA, Yerevan and Dublin. Learn more by checking the addresses.</p>
-            <div className="flex flex-wrap gap-4 mb-6">
+            <div className="flex flex-wrap gap-4 mb-6 justify-center sm:justify-start">
               <button onClick={() => handleNavClick("/contact")} className="bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-lg shadow">Learn more</button>
               <button onClick={() => handleNavClick("/plants")} className="bg-white border border-gray-300 text-gray-700 px-5 py-2 rounded-lg shadow hover:bg-gray-100">Collection</button>
             </div>
-            <div className="flex items-center gap-4 flex-wrap justify-center sm:justify-start">
+            <div className="flex items-center gap-3 flex-wrap justify-center sm:justify-start">
               {!isMobile && (
                 <button onClick={handleThumbnailPrev} className="bg-green-300 hover:bg-green-400 text-white p-3 rounded-xl">
                   <span className="text-green-700 font-bold text-3xl">&#8249;</span>
@@ -185,7 +183,7 @@ const AboutPage = () => {
                       setIndex(realIndex);
                     }}
                     className={`${
-                      isMobile ? "w-full h-full max-w-[300px]" : "w-24 sm:w-32 sm:h-32"
+                      isMobile ? "w-full max-w-[300px]" : "w-20 h-20 sm:w-24 sm:h-24"
                     } rounded-lg cursor-pointer transition-all duration-300 shadow-sm border-2 ${
                       activeImage === img ? "border-green-500" : "border-transparent"
                     }`}
@@ -205,11 +203,11 @@ const AboutPage = () => {
       {/* Stats Section */}
       <section className="relative bg-cover bg-top bg-no-repeat py-16 px-4 sm:px-6 md:px-12" style={{ backgroundImage: `url(${statsBg})` }}>
         <div className="absolute inset-0 bg-black opacity-50 z-0"></div>
-        <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-10 text-center text-white">
+        <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
           {stats.map((stat, index) => (
             <div key={index}>
-              <h3 className="text-4xl md:text-5xl font-extrabold text-green-400">{counts[index]}</h3>
-              <p className="mt-2 text-lg md:text-base font-medium">{stat.label}</p>
+              <h3 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-green-400">{counts[index]}</h3>
+              <p className="mt-2 text-sm sm:text-base font-medium">{stat.label}</p>
               <div className="mt-2 w-6 h-0.5 mx-auto bg-white opacity-60"></div>
             </div>
           ))}
@@ -219,14 +217,14 @@ const AboutPage = () => {
       {/* Team Section */}
       <section className="bg-gray-100 py-16 px-4">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-12">Meet our team</h2>
-          <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-10 sm:mb-12">Meet our team</h2>
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {team.map((member, idx) => (
               <div key={idx} className="bg-white p-6 rounded-xl shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl">
-                <img src={member.image} alt={member.name} className="w-32 h-32 object-cover rounded-lg mx-auto mb-6" />
-                <h3 className="text-xl font-bold text-gray-900">{member.name}</h3>
+                <img src={member.image} alt={member.name} className="w-24 h-24 sm:w-32 sm:h-32 object-cover rounded-lg mx-auto mb-4 sm:mb-6" />
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900">{member.name}</h3>
                 <p className="text-gray-600 mt-1 mb-4">{member.role}</p>
-                <div className="flex justify-center space-x-4 mt-4">
+                <div className="flex justify-center space-x-3">
                   {member.socials.map((Icon, i) => (
                     <a key={i} href="#" className="bg-gradient-to-b from-green-400 to-green-600 text-white p-3 rounded-md shadow hover:scale-110 transition">
                       <Icon />
@@ -243,7 +241,7 @@ const AboutPage = () => {
       <section className="bg-[#d9eddc] py-12 px-4">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-center md:text-left">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-800">Subscribe to our newsletter!</h2>
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800">Subscribe to our newsletter!</h2>
             <p className="text-gray-600 mt-2">Be informed when new offers are available.</p>
           </div>
           <form onSubmit={handleSubscribe} className="flex w-full md:w-auto max-w-md">
