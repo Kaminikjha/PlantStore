@@ -31,17 +31,17 @@ const LearnSection = () => {
   const tips = [
     {
       title: "Temperature requirement",
-      text: "Most plants grown as houseplants are selected because they are already adapted to growing at typical house temperatures, between 15° and 25°C...",
+      text: "Most plants grown as houseplants are selected because they are already adapted to growing at typical house temperatures, between 15° and 25°C. Exceptions do occur, and some plants require chilling periods at lower temperatures (down to 5° or 10°) in winter when less light is available.",
       image: tip1,
     },
     {
       title: "Water requirement",
-      text: "The amount of water a particular houseplant needs is influenced by several factors including plant size and species, light, temperature, and humidity...",
+      text: "The amount of water a particular houseplant needs is influenced by several factors. Not only is the individual plant size and species important, but also the growing conditions. Light, temperature, humidity, container type, container size, and soil type all influence the speed of growth and therefore the amount of water needed.",
       image: tip2,
     },
     {
       title: "Nutrition requirement",
-      text: "Houseplants in a controlled greenhouse are kept in ideal conditions for rapid growth, requiring higher nutrition levels...",
+      text: "Houseplants in a controlled production greenhouse are kept in an ideal conditions for rapid growth. Some plants and production flowers are hybridized for fast growth characteristics. Nutritional needs of a plant in a production green house are greater than in a typical personal house plant environment.",
       image: tip3,
     },
   ];
@@ -171,7 +171,7 @@ const LearnSection = () => {
       </section>
 
       {/* Tips Section */}
-      <section className="bg-gray-900 text-white py-16 px-4 sm:px-8 lg:px-16">
+      <section className="bg-gray-900 text-white py-16 px-4 sm:px-8 lg:px-32">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
           Quick tips
         </h2>
@@ -218,7 +218,7 @@ const LearnSection = () => {
       </section>
 
       {/* Plant Cards */}
-      <section className="bg-gray-100 py-16 px-4 md:px-16 relative">
+      <section className="bg-gray-100 py-16 px-4 md:px-32 relative">
         <div className="max-w-7xl mx-auto text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2 md:mb-8">
             Stay Tuned!

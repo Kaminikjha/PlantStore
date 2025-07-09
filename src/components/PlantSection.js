@@ -206,7 +206,7 @@ const PlantSection = () => {
               <FaLock className="text-white text-xl animate-bounce" />
             </div>
           </div>
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-800 mb-6">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-6">
             To place an order drop us a line and our support team will get back in touch as soon as possible.
           </h2>
           <Link to="/contact" className="text-green-600 font-semibold inline-flex items-center gap-1 hover:underline">
@@ -223,9 +223,9 @@ const PlantSection = () => {
             <p className="text-gray-500 mt-2 text-sm md:text-base">Latest news from our blog.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[{ img: news1, title: "How to properly pot a houseplant",  desc: "A houseplant is a plant that is grown indoors..." },
-              { img: news2, title: "Top 5 Plant Care Tips", desc: "Houseplant care is the act of growing houseplants..." },
-              { img: news3, title: "Guide to Propagating Succulents",  desc: "Succulents are plants with parts that are thickened..." }
+            {[{ img: news1, title: "How to properly pot a houseplant",  desc: "A houseplant is a plant that is grown indoors in places such as residences and offices. Major factors that should be considered when caring for houseplants are moisture, light, soil mixture, temperature, humidity, fertilizers, potting, and pest control. The following includes some general guidelines for healthy houseplant care." },
+              { img: news2, title: "Top 5 Plant Care Tips", desc: "Houseplant care is the act of growing houseplants.Most plants grown as houseplants are selected because they are already adapted to growing at typical house temperatures, between 15- 25°C. Exceptions do occur, and some plants require chilling periods at lower temperatures in winter when less light is available." },
+              { img: news3, title: "Guide to Propagating Succulents",  desc: "Succulents are plants with parts that are thickened, fleshy and engorged, usually to retain water in arid climates or soil conditions. Succulent plants may store water in various structures, such as leaves and stems. Succulents have the ability to thrive on limited water sources, such as mist and dew." }
             ].map((item, index) => (
               <div key={index} className="bg-white rounded-xl shadow hover:shadow-lg transition">
                 <img src={item.img} alt={item.title} className="w-full h-56 object-cover rounded-t-xl" />
